@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perdóname Adelaida</title>
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            text-align: center;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        h1 {
+            font-size: 2.5em;
+        }
+
+        .button {
+            padding: 10px 20px;
+            margin: 20px;
+            font-size: 1.5em;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .yes-button {
+            background-color: green;
+            color: white;
+        }
+
+        .no-button {
+            background-color: red;
+            color: white;
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+    <h1>Perdóname Adelaida, dame una oportunidad :c</h1>
+    <button class="button yes-button" onclick="accept()">Sí, te perdono y te doy una oportunidad</button>
+    <button class="button no-button" onmouseover="moveButton()">No, no te perdono</button>
+
+    <script>
+        function accept() {
+            document.body.innerHTML = `
+                <h1>Muchas graciassss, no te vuelvo a fallar. TE AMO</h1>
+                <button class="button yes-button" onclick="alert('¡Gracias por perdonarme!')">❤</button>
+            `;
+        }
+
+        function moveButton() {
+            const noButton = document.querySelector('.no-button');
+            const x = Math.random() * (window.innerWidth - noButton.offsetWidth);
+            const y = Math.random() * (window.innerHeight - noButton.offsetHeight);
+            noButton.style.left = `${x}px`;  // Corregido: Se añaden las unidades 'px'
+            noButton.style.top = `${y}px`;   // Corregido: Se añaden las unidades 'px'
+        }
+
+        window.onbeforeunload = function() {
+            return "por favor, una más :((";
+        };
+    </script>
+</body>
+</html>
